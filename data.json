@@ -1,0 +1,89 @@
+{
+    "results": [
+        {
+            "columns": [
+                "path"
+            ],
+            "data": [
+                {
+                    "graph": {
+                        "nodes": [
+                            {
+                                "id": "0",
+                                "labels": [
+                                    "SourceSystem"
+                                ],
+                                "properties": {
+                                    "name": "ddddsf77",
+                                    "referenceMdmSystem": "dddd",
+                                    "referenceMdmId": "d64"
+                                }
+                            },
+                            {
+                                "id": "21",
+                                "labels": [
+                                    "Material"
+                                ],
+                                "properties": {
+                                    "aliases": [],
+                                    "name": "1221adasd",
+                                    "externalId": "32232",
+                                    "uuid": "dadasdas"
+                                }
+                            }
+                        ],
+                        "relationships": [
+                            {
+                                "id": "1",
+                                "type": "SOURCE_SYSTEM",
+                                "startNode": "21",
+                                "endNode": "0",
+                                "properties": {}
+                            }
+                        ]
+                    }
+                },
+                {
+                    "graph": {
+                        "nodes": [
+                            {
+                                "id": "20",
+                                "labels": [
+                                    "SemanticEntity"
+                                ],
+                                "properties": {
+                                    "name": "ffff",
+                                    "referenceMdmSystem": "ff",
+                                    "description": "fff",
+                                    "referenceMdmId": "fff"
+                                }
+                            },
+                            {
+                                "id": "21",
+                                "labels": [
+                                    "Material"
+                                ],
+                                "properties": {
+                                    "aliases": [],
+                                    "name": "1221adasd",
+                                    "externalId": "32232",
+                                    "uuid": "dadasdas"
+                                }
+                            }
+                        ],
+                        "relationships": [
+                            {
+                                "id": "0",
+                                "type": "SEMANTIC_ENTITY",
+                                "startNode": "21",
+                                "endNode": "20",
+                                "properties": {}
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "errors": []
+}

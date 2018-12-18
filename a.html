@@ -1,0 +1,55 @@
+<!-- <html>
+<head>
+  <link rel="stylesheet" href="styles/vendor.css"/>
+  <link rel="stylesheet" href="styles/alchemy.css"/>
+</head>
+<body>
+  <div class="alchemy" id="alchemy"></div>
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/alchemy.js"></script>
+  <script type="text/javascript">
+
+    var config = {
+      dataSource: 'data/contrib.json',
+      graphHeight: 260,
+      graphWidth: 300,
+      
+      linkDistance: function(){ return 40; },
+
+      nodeTypes: {"node_type": ["Maintainer", "Contributor"]},
+      caption: function(node){ return node.caption; }
+    };
+
+    alchemy = new Alchemy(config)
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link rel="stylesheet" href="styles/vendor.css"/>
+  <link rel="stylesheet" href="styles/alchemy.css"/>
+  <script src="g.js"></script>
+</head>
+<body>
+	<script src="scripts/vendor.js"></script>
+  <script src="scripts/alchemy.js"></script>
+	<script type="text/javascript">
+	  var config = {
+	        dataSource: JSON.stringify(res),
+	        nodeCaption: 'name',
+	        nodeMouseOver: 'name',
+	        cluster: false,
+	        clusterColours: ["#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02"]}
+    var alchemy = new Alchemy(config)
+	</script>
+</body>
+</html>
