@@ -98,10 +98,10 @@ var nodes=[], links=[];
 res.results[0].data.forEach(function (row) {
    row.graph.nodes.forEach(function (n) {
      if (idIndex(nodes,n.id) == null)
-       nodes.push({id:n.id,label:n.labels[0],title:n.properties.name});
+       nodes.push({id:n.id, group:n.labels[0] ,label:n.labels[0],title:n.properties.name});
    });
    links = links.concat( row.graph.relationships.map(function(r) {
-     return {source:idIndex(nodes,r.startNode),target:idIndex(nodes,r.endNode),type:r.type};
+     return {source:idIndex(nodes,r.startNode),target:idIndex(nodes,r.endNode),value:1};
    }));
 });
 viz = {nodes:nodes, links:links};
