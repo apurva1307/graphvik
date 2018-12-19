@@ -98,14 +98,14 @@ var nodes=[], links=[];
 res.results[0].data.forEach(function (row) {
  row.graph.nodes.forEach(function (n) {
    if (idIndex(nodes,n.id) == null)
-     nodes.push({id:n.id, name:n.labels[0], label:n.labels[0]});
+     nodes.push({id:parseInt(n.id), name:n.labels[0], label:n.labels[0]});
  });
-row.graph.relationships.map(function(r) {
-   links.push({source:idIndex(nodes,r.startNode),target:idIndex(nodes,r.endNode),type:r.type});
- })
+  row.graph.relationships.map(function(r) {
+     links.push({source:parseInt(r.startNode),target:parseInt(r.endNode),type:r.type});
+   })
 });
 
-var viz = {nodes:nodes, links:links};
+var json = {nodes:nodes, links:links};
 
 
   // var width = 800, height = 800;
