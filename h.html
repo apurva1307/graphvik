@@ -19,55 +19,20 @@
 
 <script type="text/javascript">
 
-
-    var json1 = {
-  "nodes": [
-    {
-      "name": "Peter",
-      "label": "Person",
-      "id": 1
-    },
-    {
-      "name": "Michael",
-      "label": "Person",
-      "id": 2
-    },
-    {
-      "name": "Neo4j",
-      "label": "Database",
-      "id": 3
-    },
-    {
-      "name": "Graph Database",
-      "label": "Database",
-      "id": 4
-    }
-  ],
-  "links": [
-    {
-      "source": 1,
-      "target": 2,
-      "type": "KNOWS",
-      "since": 2010
-    },
-    {
-      "source": 1,
-      "target": 3,
-      "type": "FOUNDED"
-    },
-    {
-      "source": 2,
-      "target": 3,
-      "type": "WORKS_ON"
-    },
-    {
-      "source": 3,
-      "target": 4,
-      "type": "IS_A"
-    }
-  ]
-};
-
+var categorical = [
+  { "name" : "schemeAccent", "n": 8},
+  { "name" : "schemeDark2", "n": 8},
+  { "name" : "schemePastel2", "n": 8},
+  { "name" : "schemeSet2", "n": 8},
+  { "name" : "schemeSet1", "n": 9},
+  { "name" : "schemePastel1", "n": 9},
+  { "name" : "schemeCategory10", "n" : 10},
+  { "name" : "schemeSet3", "n" : 12 },
+  { "name" : "schemePaired", "n": 12},
+  { "name" : "schemeCategory20", "n" : 20 },
+  { "name" : "schemeCategory20b", "n" : 20},
+  { "name" : "schemeCategory20c", "n" : 20 }
+]
     var colors = d3.scaleOrdinal(d3.schemeCategory10);
 
     var svg = d3.select("svg"),
@@ -75,6 +40,12 @@
         height = +svg.attr("height"),
         node,
         link;
+
+    svg.call(
+        d3.zoom()
+        .scaleExtent([1, 4])
+        .on("zoom", function() { svg.attr("transform", d3.event.transform); })
+    );      
 
     svg.append('defs').append('marker')
         .attrs({'id':'arrowhead',
@@ -152,7 +123,7 @@
             );
 
         node.append("circle")
-            .attr("r", 5)
+            .attr("r", 12)
             .style("fill", function (d, i) {return colors(i);})
 
         node.append("title")
